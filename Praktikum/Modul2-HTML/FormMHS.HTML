@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Mahasiswa</title>
+</head>
+<body>
+    <h1>Form Mahasiswa TELS</h1>
+    <p>Silahkan isi data mahasiswa TELS pada form berikut:</p>
+    <form action="Modul2.HTML" method="post">
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="gender">Jenis Kelamin:</label><br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+
+        <label for="hobi">Hobi:</label><br>
+        <input type="checkbox" name="hobi" value="membaca"> Membaca<br>
+        <input type="checkbox" name="hobi" value="menulis"> Menulis<br>
+        <input type="checkbox" name="hobi" value="olahraga"> Olahraga<br><br>
+
+        <label for="pendidikan">Pendidikan:</label><br>
+        <select name="pendidikan" id="pendidikan">
+            <option value="s1">S1 Bisnis Digital</option>
+            <option value="s1">S1 Rekayasa Perangkat Lunak</option>
+            <option value="s1">S1 Teknik Informatika</option>
+        </select><br><br>
+
+        <label for="saran">Saran & Kritik:</label><br>
+        <textarea name="saran" id="saran" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Submit">
+
+    </br>
+    <a href="./Modul2.HTML" > Kembali ke Halaman Modul 2 </a> 
+</br>
+    </form>
+    
+</body>
+</html>
