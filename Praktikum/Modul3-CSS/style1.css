@@ -1,0 +1,49 @@
+
+body {
+    background: linear-gradient(to bottom, #3e6bff, #14413d);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    font-family: Arial, sans-serif; 
+}
+
+.heading {
+    background-color: lightgreen;
+    padding: 20px;
+    margin: 20px;
+}
+
+.heading h1 { 
+    color: rgb(255, 121, 11);
+    font-size: 36px;
+    text-align: center; 
+}
+
+.profil {
+    background-color: white; 
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 8px; 
+}
+
+
+.judulprofil {
+    color: darkblue; 
+    text-align: center; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 32px; 
+    font-weight: bold; 
+}
+
+.deskripsiprofil {
+    text-align: center; 
+    color: #444; 
+    font-style: italic; 
+}
+
+
+.listprofil {
+    list-style-type: square;
+    font-size: 18px;
+    color: darkred;
+    font-weight: bold;
+}
