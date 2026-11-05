@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHub - Tambah Member</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style4.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="topbar">
+            <a href="./index.html" class="navlogo">TECH-HUB</a>
+            <div class="topbar-actions">
+                <button class="createbtn selectedbtn">+ NEW TASK</button>
+                <img src="https://images.unsplash.com/photo-1535207010348-71e47296838a?auto=format&fit=crop&w=100&q=80" alt="Profile" class="profile-avatar">
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <div class="sidebar">
+                <div class="nav-links">
+                    <a href="./index.html" class="navlink"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Dashboard</a>
+                    <a href="./projects.html" class="navlink"><svg viewBox="0 0 24 24"><path d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"/></svg> Data Proyek</a>
+                    <a href="./members.html" class="navlink"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg> Tim & Member</a>
+                    <a href="./register.html" class="navlink selectedlink"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg> Registrasi Tim</a>
+                    <a href="./profile.html" class="navlink"><svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49-.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg> Pengaturan</a>
+                </div>
+            </div>
+
+            <div class="landingpage">
+                <div class="page-header">
+                    <h1 class="page-title">Tambah Anggota Baru</h1>
+                    <p class="page-desc">Daftarkan rekan kerja atau developer baru ke dalam lingkungan kerja TechHub.</p>
+                </div>
+
+                <div class="content-card">
+                    <form action="#" method="post">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                            <div class="form-group">
+                                <label>Nama Lengkap</label>
+                                <input type="text" placeholder="Masukkan nama" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat Email</label>
+                                <input type="email" placeholder="email@domain.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Departemen / Divisi</label>
+                                <select name="divisi">
+                                    <option value="frontend">Frontend Development</option>
+                                    <option value="backend">Backend Development</option>
+                                    <option value="uiux">UI/UX Design</option>
+                                    <option value="pm">Project Management</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Level Pengalaman</label>
+                                <select name="level">
+                                    <option value="junior">Junior</option>
+                                    <option value="mid">Mid-Level</option>
+                                    <option value="senior">Senior</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 10px;">
+                            <label>Keahlian Utama (Tech Stack)</label>
+                            <div class="radio-group" style="flex-wrap: wrap; gap: 15px;">
+                                <label><input type="checkbox" value="react"> React / Vue</label>
+                                <label><input type="checkbox" value="node"> Node.js / PHP</label>
+                                <label><input type="checkbox" value="figma"> Figma</label>
+                                <label><input type="checkbox" value="python"> Python</label>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Tambahkan Anggota" style="width: 100%;">
+                    </form>
+                </div>
+
+                <div class="footer2">
+                    <p>TechHub Management System</p>
+                    <p>Copyright 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

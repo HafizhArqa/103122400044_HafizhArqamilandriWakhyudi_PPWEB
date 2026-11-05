@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ONE 'O ONES Official Store - Heavyweight vinyl records, analog cassettes, limited tour apparel, and sensory collectibles.">
+    <title>Official Store | ONE 'O ONES Merch & Vinyls</title>
+
+    <!-- Tailwind CSS (Allowed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body
+    class="bg-slate-950 text-slate-100 selection:bg-cyan-400 selection:text-slate-900 overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- Skip Link for Keyboard & Screen Reader Accessibility -->
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-400 focus:text-slate-950 focus:rounded-lg focus:font-bold">
+        Skip to main content
+    </a>
+
+    <!-- =
+         NAVBAR (Semantic Header & Navigation)
+         = -->
+    <header class="fixed top-0 left-0 right-0 z-50 artist-navbar" role="banner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Left: Brand / Official Artist Logo (Solid 2-Tone) -->
+            <a href="index.html" class="flex items-center gap-3 group" aria-label="ONE 'O ONES Homepage">
+                <div
+                    class="w-10 h-10 rounded-xl bg-slate-900 border-2 border-cyan-400 flex items-center justify-center font-mono font-black text-cyan-400 text-xs tracking-tighter shadow-[0_0_15px_rgba(103,232,249,0.25)] transition-all duration-300 group-hover:scale-105 group-hover:bg-cyan-400 group-hover:text-slate-950"
+                    aria-hidden="true">
+                    101
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-bold tracking-[0.25em] text-sm uppercase text-white group-hover:text-cyan-300 transition-colors">
+                        ONE 'O ONES
+                    </span>
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-cyan-400/80 font-mono font-semibold">
+                        Official Store
+                    </span>
+                </div>
+            </a>
+
+            <!-- Center: Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Primary Navigation">
+
+                <!-- Albums Dropdown (Pure CSS Hover) -->
+                <div class="relative group">
+                    <button type="button" class="nav-link flex items-center gap-1.5 focus:outline-none py-2"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span>Albums</span>
+                        <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-cyan-400"
+                            aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div
+                        class="absolute top-full left-0 mt-1 w-64 bg-slate-900/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2.5 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-50"
+                        role="menu">
+                        <a href="index.html#section-8bit" role="menuitem"
+                            class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group/item">
+                            <span class="text-xl" aria-hidden="true">👾</span>
+                            <div>
+                                <p class="text-xs font-bold text-white group-hover/item:text-cyan-300">8-Bit Odyssey</p>
+                                <p class="text-[10px] text-slate-400">Chiptune & Retro Digital</p>
+                            </div>
+                        </a>
+                        <a href="index.html#section-astral" role="menuitem"
+                            class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group/item">
+                            <span class="text-xl" aria-hidden="true">🌌</span>
+                            <div>
+                                <p class="text-xs font-bold text-white group-hover/item:text-amber-300">Astral Horizon
+                                </p>
+                                <p class="text-[10px] text-slate-400">Bold Minimalist & Astral</p>
+                            </div>
+                        </a>
+                        <a href="index.html#section-ocean" role="menuitem"
+                            class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group/item">
+                            <span class="text-xl" aria-hidden="true">🌊</span>
+                            <div>
+                                <p class="text-xs font-bold text-white group-hover/item:text-cyan-300">Ocean Lullaby</p>
+                                <p class="text-[10px] text-slate-400">Aquatic Chill & Waves</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Store Page (Active) -->
+                <a href="store.html" class="nav-link text-white font-semibold after:w-full" aria-current="page">
+                    Store
+                </a>
+
+                <!-- Tour Page -->
+                <a href="tour.html" class="nav-link">
+                    Tour
+                </a>
+
+                <!-- About Page -->
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+            </nav>
+
+            <!-- Right: Search Bar, Login Icon, and Cart Action -->
+            <div class="flex items-center gap-3 sm:gap-4">
+
+                <!-- Semantic Search Form -->
+                <form role="search" action="#all" method="get" class="relative hidden sm:flex items-center">
+                    <label for="store-search-input" class="sr-only">Search merchandise</label>
+                    <div
+                        class="flex items-center bg-slate-900/80 border border-white/15 rounded-full pl-3 pr-2 py-1.5 focus-within:border-cyan-400 transition-colors">
+                        <svg class="w-3.5 h-3.5 text-slate-400" aria-hidden="true" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input id="store-search-input" type="search" placeholder="Search merch..."
+                            class="bg-transparent border-none text-xs text-white placeholder-slate-500 pl-2 pr-1 w-24 lg:w-36 focus:outline-none">
+                    </div>
+                </form>
+
+                <!-- User / Login Icon Button -->
+                <a href="#modal-login"
+                    class="w-9 h-9 rounded-full bg-slate-900 border border-white/15 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/60 transition-all shadow-sm"
+                    title="Fan Login / Account" aria-label="Open fan club member login">
+                    <svg class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </a>
+
+                <!-- Solid 2-Tone Cart Button -->
+                <a href="#modal-cart"
+                    class="relative text-xs uppercase tracking-wider font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 border border-cyan-200 shadow-md hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+                    aria-label="View shopping bag with 2 items">
+                    <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 24 24">
+                        <path
+                            d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
+                    <span>Cart (0)</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- =
+         STORE HERO BANNER
+         = -->
+    <section aria-labelledby="store-page-heading"
+        class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0b1120] to-slate-950 border-b border-white/10 relative">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <span class="inline-block text-xs uppercase tracking-[0.35em] text-cyan-400 font-mono font-bold mb-3">
+                Official Artist Archive &bull; Limited Drops
+            </span>
+            <h1 id="store-page-heading"
+                class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white uppercase drop-shadow-md">
+                ONE 'O ONES STORE
+            </h1>
+            <p class="mt-4 text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Collector heavyweight vinyls, limited analog cassettes, minimalist apparel, and ambient artifacts
+                inspired by our three musical worlds.
+            </p>
+
+            <!-- Store Category Badges (Semantic category navigation) -->
+            <nav aria-label="Merchandise Categories" class="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+                <a href="#all"
+                    class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-400 text-slate-950 border border-cyan-200 shadow-sm transition-transform hover:scale-105">
+                    All Merch (12)
+                </a>
+                <a href="#vinyls"
+                    class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 transition-colors">
+                    Vinyl & Tapes
+                </a>
+                <a href="#apparel"
+                    class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 transition-colors">
+                    Apparel & Merch
+                </a>
+                <a href="#collectibles"
+                    class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900 hover:bg-slate-800 text-slate-300 border border-white/10 transition-colors">
+                    Astral & Collectibles
+                </a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- =
+         STORE PRODUCTS GRID (Semantic Main Content)
+         = -->
+    <main id="main-content" role="main" class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+
+        <!-- Featured Announcement Banner -->
+        <aside aria-label="Featured Boxset Announcement"
+            class="mb-12 p-6 rounded-2xl bg-gradient-to-r from-amber-500/10 via-slate-900/60 to-cyan-500/10 border border-amber-400/30 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <span class="text-3xl" aria-hidden="true">🌌</span>
+                <div>
+                    <h2 class="text-sm sm:text-base font-black text-white uppercase tracking-wide">
+                        Astral Horizon Gold Vinyl Collector's Box Now In Stock!
+                    </h2>
+                    <p class="text-xs text-amber-300/80 mt-0.5">
+                        Includes glowing Astral ambient lantern audio demo voucher.
+                    </p>
+                </div>
+            </div>
+            <a href="#product-astral-vinyl"
+                class="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-md">
+                View Boxset
+            </a>
+        </aside>
+
+        <!-- Section 1: Vinyl & Cassettes -->
+        <section id="vinyls" class="mb-16" aria-labelledby="heading-vinyls">
+            <header class="flex items-center justify-between mb-8 pb-3 border-b border-white/10">
+                <div>
+                    <span class="text-[10px] uppercase font-mono tracking-[0.25em] text-cyan-400 font-bold">Physical
+                        Audio Releases</span>
+                    <h2 id="heading-vinyls" class="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">Vinyl Records &
+                        Cassettes</h2>
+                </div>
+                <span class="text-xs text-slate-400 font-mono">4 items</span>
+            </header>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Astral Horizon Vinyl -->
+                <article id="product-astral-vinyl" class="product-card group flex flex-col"
+                    aria-labelledby="label-astral-vinyl">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-amber-400/30 backdrop-blur-md">
+                        <div
+                            class="w-32 h-32 rounded-full bg-slate-950 border-2 border-amber-400 flex flex-col items-center justify-center shadow-lg group-hover:rotate-45 transition-transform duration-700"
+                            aria-hidden="true">
+                            <span class="text-3xl">🌌</span>
+                            <span
+                                class="text-[8px] uppercase tracking-widest text-amber-300 font-mono font-bold mt-1">ASTRAL
+                                LP</span>
+                        </div>
+                        <span
+                            class="absolute top-3 left-3 px-2 py-0.5 bg-amber-400 text-slate-950 text-[9px] font-black uppercase rounded font-mono">Bold
+                            Edition</span>
+                        <figcaption class="sr-only">Astral Horizon Heavyweight Gold 180g Vinyl Record</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-amber-300 transition-colors"
+                            aria-label="Add Astral Horizon Gold Vinyl to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-astral-vinyl"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                        Astral Horizon Heavyweight Gold 180g Vinyl
+                    </h3>
+                    <p class="mt-1">
+                        <data value="36.00" class="text-xs sm:text-sm font-black text-amber-400">$36.00</data>
+                    </p>
+                </article>
+
+                <!-- 8-Bit Odyssey Vinyl -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-8bit-vinyl">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-cyan-400/30 backdrop-blur-md">
+                        <div
+                            class="w-32 h-32 rounded-full bg-slate-950 border-2 border-cyan-400 flex flex-col items-center justify-center shadow-lg group-hover:rotate-45 transition-transform duration-700"
+                            aria-hidden="true">
+                            <span class="text-3xl">👾</span>
+                            <span
+                                class="text-[8px] uppercase tracking-widest text-cyan-300 font-mono font-bold mt-1">8-BIT
+                                LP</span>
+                        </div>
+                        <span
+                            class="absolute top-3 left-3 px-2 py-0.5 bg-cyan-400 text-slate-950 text-[9px] font-black uppercase rounded font-mono">Retro
+                            Pixel</span>
+                        <figcaption class="sr-only">8-Bit Odyssey Chiptune Hologram Vinyl</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-cyan-300 transition-colors"
+                            aria-label="Add 8-Bit Odyssey Vinyl to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-8bit-vinyl"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">
+                        8-Bit Odyssey Chiptune Hologram Vinyl
+                    </h3>
+                    <p class="mt-1">
+                        <data value="34.00" class="text-xs sm:text-sm font-black text-cyan-400">$34.00</data>
+                    </p>
+                </article>
+
+                <!-- Ocean Lullaby Vinyl -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-ocean-vinyl">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-teal-400/30 backdrop-blur-md">
+                        <div
+                            class="w-32 h-32 rounded-full bg-slate-950 border-2 border-teal-400 flex flex-col items-center justify-center shadow-lg group-hover:rotate-45 transition-transform duration-700"
+                            aria-hidden="true">
+                            <span class="text-3xl">🌊</span>
+                            <span
+                                class="text-[8px] uppercase tracking-widest text-teal-300 font-mono font-bold mt-1">OCEAN
+                                LP</span>
+                        </div>
+                        <span
+                            class="absolute top-3 left-3 px-2 py-0.5 bg-teal-400 text-slate-950 text-[9px] font-black uppercase rounded font-mono">Bioluminescent</span>
+                        <figcaption class="sr-only">Ocean Lullaby Aqua Swirl Vinyl Edition</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-teal-300 transition-colors"
+                            aria-label="Add Ocean Lullaby Vinyl to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-ocean-vinyl"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-teal-300 transition-colors">
+                        Ocean Lullaby Aqua Swirl Vinyl Edition
+                    </h3>
+                    <p class="mt-1">
+                        <data value="38.00" class="text-xs sm:text-sm font-black text-teal-400">$38.00</data>
+                    </p>
+                </article>
+
+                <!-- Retro Cassette Tape -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-tape">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-white/10 backdrop-blur-md">
+                        <div
+                            class="w-28 h-20 rounded-lg bg-slate-950 border-2 border-purple-400 flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
+                            aria-hidden="true">
+                            <span class="text-2xl">📼</span>
+                            <span
+                                class="text-[8px] uppercase tracking-widest text-purple-300 font-mono font-bold mt-1">CASSETTE</span>
+                        </div>
+                        <figcaption class="sr-only">Analog Sessions Demo Cassette Tape</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-white transition-colors"
+                            aria-label="Add Demo Cassette Tape to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-tape"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-purple-300 transition-colors">
+                        Analog Sessions Demo Cassette Tape
+                    </h3>
+                    <p class="mt-1">
+                        <data value="18.00" class="text-xs sm:text-sm font-black text-purple-400">$18.00</data>
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Section 2: Apparel & Merch -->
+        <section id="apparel" class="mb-16" aria-labelledby="heading-apparel">
+            <header class="flex items-center justify-between mb-8 pb-3 border-b border-white/10">
+                <div>
+                    <span class="text-[10px] uppercase font-mono tracking-[0.25em] text-cyan-400 font-bold">Official
+                        Wear</span>
+                    <h2 id="heading-apparel" class="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">Apparel & Outerwear
+                    </h2>
+                </div>
+                <span class="text-xs text-slate-400 font-mono">4 items</span>
+            </header>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Astral Horizon Monogram Tee -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-monogram-tee">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-amber-400/20 backdrop-blur-md">
+                        <img src="8bitmerch1.jpeg"
+                            alt="Astral Horizon Minimalist Monogram Tee in Charcoal" loading="lazy"
+                            class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                        <figcaption class="sr-only">Astral Horizon Minimalist Monogram Tee</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-amber-300 transition-colors"
+                            aria-label="Add Astral Horizon Monogram Tee to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-monogram-tee"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                        Astral Horizon Minimalist Monogram Tee
+                    </h3>
+                    <p class="mt-1">
+                        <data value="30.00" class="text-xs sm:text-sm font-black text-amber-400">$30.00</data>
+                    </p>
+                </article>
+
+                <!-- Astral Dusk Hoodie -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-dusk-hoodie">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-amber-400/20 backdrop-blur-md">
+                        <img src="8bitmerch1.jpeg"
+                            alt="Astral Dusk Heavyweight Tour Hoodie" loading="lazy"
+                            class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                        <figcaption class="sr-only">Astral Dusk Heavyweight Tour Hoodie</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-amber-300 transition-colors"
+                            aria-label="Add Astral Dusk Hoodie to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-dusk-hoodie"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                        Astral Dusk Heavyweight Tour Hoodie
+                    </h3>
+                    <p class="mt-1">
+                        <data value="55.00" class="text-xs sm:text-sm font-black text-amber-400">$55.00</data>
+                    </p>
+                </article>
+
+                <!-- 8-Bit Pixel Synth Tee -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-8bit-tee">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-cyan-400/20 backdrop-blur-md">
+                        <img src="8bitmerch2.jpeg"
+                            alt="8-Bit Odyssey Pixel Pocket Tee" loading="lazy"
+                            class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                        <figcaption class="sr-only">8-Bit Odyssey Pixel Pocket Tee</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-cyan-300 transition-colors"
+                            aria-label="Add 8-Bit Odyssey Pixel Tee to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-8bit-tee"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">
+                        8-Bit Odyssey Pixel Pocket Tee
+                    </h3>
+                    <p class="mt-1">
+                        <data value="32.00" class="text-xs sm:text-sm font-black text-cyan-400">$32.00</data>
+                    </p>
+                </article>
+
+                <!-- Ocean Waves Crewneck -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-ocean-sweat">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-teal-400/20 backdrop-blur-md">
+                        <img src="8bitmerch2.jpeg"
+                            alt="Ocean Lullaby Heavy Fleece Sweatshirt" loading="lazy"
+                            class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                        <figcaption class="sr-only">Ocean Lullaby Heavy Fleece Sweatshirt</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-teal-300 transition-colors"
+                            aria-label="Add Ocean Lullaby Sweatshirt to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-ocean-sweat"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-teal-300 transition-colors">
+                        Ocean Lullaby Heavy Fleece Sweatshirt
+                    </h3>
+                    <p class="mt-1">
+                        <data value="52.00" class="text-xs sm:text-sm font-black text-teal-400">$52.00</data>
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Section 3: Astral & Ambient Collectibles -->
+        <section id="collectibles" class="mb-16" aria-labelledby="heading-collectibles">
+            <header class="flex items-center justify-between mb-8 pb-3 border-b border-white/10">
+                <div>
+                    <span class="text-[10px] uppercase font-mono tracking-[0.25em] text-amber-400 font-bold">Sensory &
+                        Ambient Art</span>
+                    <h2 id="heading-collectibles" class="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">Astral &
+                        Collectibles</h2>
+                </div>
+                <span class="text-xs text-slate-400 font-mono">4 items</span>
+            </header>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Ambient Firefly Lantern -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-lantern">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-amber-400/30 backdrop-blur-md">
+                        <div
+                            class="w-28 h-28 rounded-2xl bg-slate-950 border-2 border-amber-400/50 flex flex-col items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+                            aria-hidden="true">
+                            <span class="text-4xl mb-1">✨</span>
+                            <span
+                                class="text-[8px] uppercase tracking-widest text-amber-300 font-mono font-bold">Astral</span>
+                        </div>
+                        <figcaption class="sr-only">Ambient Firefly Glowing Sound Lantern</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-amber-300 transition-colors"
+                            aria-label="Add Glowing Sound Lantern to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-lantern"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                        Ambient Firefly Glowing Sound Lantern
+                    </h3>
+                    <p class="mt-1">
+                        <data value="28.00" class="text-xs sm:text-sm font-black text-amber-400">$28.00</data>
+                    </p>
+                </article>
+
+                <!-- 101 Monogram Pin Set -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-pin-set">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-cyan-400/20 backdrop-blur-md">
+                        <div
+                            class="w-24 h-24 rounded-2xl bg-slate-950 border-2 border-cyan-400/60 flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
+                            aria-hidden="true">
+                            <span class="text-2xl font-mono font-black text-cyan-400">101</span>
+                            <span class="text-[8px] uppercase tracking-widest text-slate-400 font-mono mt-1">ENAMEL
+                                PINS</span>
+                        </div>
+                        <figcaption class="sr-only">ONE 'O ONES Emblem Enamel Pin Set (3-Pack)</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-cyan-300 transition-colors"
+                            aria-label="Add Enamel Pin Set to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-pin-set"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">
+                        ONE 'O ONES Emblem Enamel Pin Set (3-Pack)
+                    </h3>
+                    <p class="mt-1">
+                        <data value="15.00" class="text-xs sm:text-sm font-black text-cyan-400">$15.00</data>
+                    </p>
+                </article>
+
+                <!-- Bioluminescent Desk Diffuser -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-diffuser">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-teal-400/20 backdrop-blur-md">
+                        <div
+                            class="w-28 h-28 rounded-full bg-slate-950 border-2 border-teal-400/50 flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
+                            aria-hidden="true">
+                            <span class="text-3xl mb-1">🫧</span>
+                            <span
+                                class="text-[8px] uppercase tracking-widest text-teal-300 font-mono font-bold">DIFFUSER</span>
+                        </div>
+                        <figcaption class="sr-only">Bioluminescent Aquatic Sound and Light Diffuser</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-teal-300 transition-colors"
+                            aria-label="Add Bioluminescent Diffuser to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-diffuser"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-teal-300 transition-colors">
+                        Bioluminescent Aquatic Sound & Light Diffuser
+                    </h3>
+                    <p class="mt-1">
+                        <data value="45.00" class="text-xs sm:text-sm font-black text-teal-400">$45.00</data>
+                    </p>
+                </article>
+
+                <!-- Astral Horizon Screenprinted Poster -->
+                <article class="product-card group flex flex-col" aria-labelledby="label-poster">
+                    <figure
+                        class="product-image-container aspect-square flex items-center justify-center p-6 mb-4 relative bg-slate-900/60 border border-amber-400/20 backdrop-blur-md">
+                        <div
+                            class="w-24 h-32 rounded-lg bg-slate-950 border-2 border-amber-400/40 flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
+                            aria-hidden="true">
+                            <span class="text-2xl mb-1">🖼️</span>
+                            <span
+                                class="text-[7px] uppercase tracking-widest text-amber-300 font-mono font-bold text-center">ASTRAL<br>POSTER</span>
+                        </div>
+                        <figcaption class="sr-only">Astral Horizon Hand-Screenprinted Silk Poster</figcaption>
+                        <a href="#modal-cart"
+                            class="quick-view-badge bg-white text-slate-950 text-[11px] font-bold tracking-wider uppercase px-4 py-2 rounded-lg shadow-xl hover:bg-amber-300 transition-colors"
+                            aria-label="Add Silk Poster to Cart">
+                            Add to Cart
+                        </a>
+                    </figure>
+                    <h3 id="label-poster"
+                        class="text-xs sm:text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                        Astral Horizon Hand-Screenprinted Silk Poster
+                    </h3>
+                    <p class="mt-1">
+                        <data value="22.00" class="text-xs sm:text-sm font-black text-amber-400">$22.00</data>
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =
+         PURE CSS CART DRAWER MODAL (#modal-cart) - Semantic Aside / Dialog
+         = -->
+    <aside id="modal-cart" class="login-modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="cart-modal-title">
+        <div class="login-modal-box max-w-md w-full relative">
+            <a href="#"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold leading-none"
+                aria-label="Close Shopping Bag Modal">&times;</a>
+
+            <header class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+                <div class="w-8 h-8 rounded-lg bg-cyan-400 text-slate-950 font-black flex items-center justify-center text-xs"
+                    aria-hidden="true">
+                    101
+                </div>
+                <div>
+                    <h2 id="cart-modal-title" class="text-sm font-black text-white uppercase tracking-wider">Your Shopping Bag</h2>
+                    <p class="text-[10px] text-cyan-400 font-mono">2 items in order</p>
+                </div>
+            </header>
+
+            <!-- Cart Items List -->
+            <ul class="space-y-4 mb-6 max-h-60 overflow-y-auto pr-1">
+                <li class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl" aria-hidden="true">🌌</span>
+                        <div>
+                            <p class="text-xs font-bold text-white">Astral Horizon Heavyweight Gold Vinyl</p>
+                            <p class="text-[10px] text-slate-400 font-mono">Qty: 1 &bull; 180g LP</p>
+                        </div>
+                    </div>
+                    <data value="36.00" class="text-xs font-black text-amber-400">$36.00</data>
+                </li>
+
+                <li class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl" aria-hidden="true">✨</span>
+                        <div>
+                            <p class="text-xs font-bold text-white">Ambient Firefly Sound Lantern</p>
+                            <p class="text-[10px] text-slate-400 font-mono">Qty: 1 &bull; Astral</p>
+                        </div>
+                    </div>
+                    <data value="28.00" class="text-xs font-black text-amber-400">$28.00</data>
+                </li>
+            </ul>
+
+            <!-- Subtotal & Checkout -->
+            <footer class="pt-4 border-t border-white/10 space-y-4">
+                <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-400 uppercase tracking-wider font-semibold">Subtotal</span>
+                    <data value="64.00" class="text-base font-black text-white">$64.00 USD</data>
+                </div>
+                <button type="button"
+                    class="w-full py-3.5 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg border border-cyan-200">
+                    Proceed to Checkout
+                </button>
+                <p class="text-[10px] text-center text-slate-500">
+                    Worldwide shipping available &bull; Pure HTML, CSS, Tailwind
+                </p>
+            </footer>
+        </div>
+    </aside>
+
+    <!-- =
+         PURE CSS LOGIN MODAL (#modal-login) - Semantic Aside / Dialog
+         = -->
+    <aside id="modal-login" class="login-modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="login-modal-title">
+        <div class="login-modal-box relative">
+            <a href="#"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold leading-none"
+                aria-label="Close Member Login">&times;</a>
+
+            <header class="text-center mb-6">
+                <div class="w-12 h-12 rounded-xl bg-slate-900 border-2 border-cyan-400 flex items-center justify-center font-mono font-black text-cyan-400 text-sm mx-auto mb-3 shadow-[0_0_20px_rgba(103,232,249,0.3)]"
+                    aria-hidden="true">
+                    101
+                </div>
+                <h2 id="login-modal-title" class="text-lg font-black text-white tracking-wide uppercase">Fan Club Access</h2>
+                <p class="text-xs text-slate-400 mt-1">Sign in for exclusive drops and ticket presales</p>
+            </header>
+
+            <form action="#" method="post" onsubmit="return false;" class="space-y-4">
+                <fieldset class="space-y-4">
+                    <legend class="sr-only">Sign In Credentials</legend>
+                    <div>
+                        <label for="store-login-email"
+                            class="block text-[10px] font-mono uppercase tracking-wider text-slate-300 mb-1.5">Email
+                            Address</label>
+                        <input id="store-login-email" type="email" placeholder="astronaut@one-o-ones.com" required
+                            class="w-full bg-slate-900/90 border border-white/15 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+                    </div>
+
+                    <div>
+                        <label for="store-login-password"
+                            class="block text-[10px] font-mono uppercase tracking-wider text-slate-300 mb-1.5">Password</label>
+                        <input id="store-login-password" type="password" placeholder="••••••••••••" required
+                            class="w-full bg-slate-900/90 border border-white/15 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+                    </div>
+                </fieldset>
+
+                <button type="submit"
+                    class="w-full py-3 bg-cyan-400 hover:bg-cyan-300 text-slate-950 rounded-xl text-xs font-bold tracking-widest uppercase transition-colors shadow-md mt-2">
+                    Enter Member Portal
+                </button>
+            </form>
+
+            <footer class="mt-6 pt-4 border-t border-white/10 text-center text-xs text-slate-400">
+                Don't have an account yet? <a href="#" class="text-cyan-400 font-semibold hover:underline">Join Fan
+                    Club</a>
+            </footer>
+        </div>
+    </aside>
+
+    <!-- =
+         FOOTER (Semantic Contentinfo)
+         = -->
+    <footer class="bg-[#050811] py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10 text-slate-400 mt-auto"
+        role="contentinfo">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+
+                <!-- Col 1: Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-slate-900 border-2 border-cyan-400 flex items-center justify-center font-mono font-black text-cyan-400 text-xs"
+                            aria-hidden="true">
+                            101
+                        </div>
+                        <span class="text-base font-bold text-white tracking-widest uppercase">
+                            ONE 'O ONES &bull; STORE ARCHIVE
+                        </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">
+                        Official merchandise and discography store. Featuring physical records from 8-Bit Odyssey,
+                        Astral Horizon, and Ocean Lullaby.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <nav aria-label="Footer Quick Links">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="index.html#section-8bit" class="hover:text-cyan-300 transition-colors">8-Bit
+                                Odyssey</a></li>
+                        <li><a href="index.html#section-astral" class="hover:text-amber-300 transition-colors">Astral
+                                Horizon (Astral)</a></li>
+                        <li><a href="index.html#section-ocean" class="hover:text-cyan-300 transition-colors">Ocean
+                                Lullaby</a></li>
+                        <li><a href="tour.html" class="hover:text-white transition-colors">World Tour 2026</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About ONE 'O ONES</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Col 3: Newsletter Sign-up -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-white mb-4">
+                        Store Newsletter
+                    </h3>
+                    <p class="text-xs text-slate-400 mb-3 leading-relaxed">
+                        Pre-order notifications for limited edition vinyl represses.
+                    </p>
+                    <form action="#" method="post" onsubmit="return false;" class="space-y-2">
+                        <fieldset>
+                            <legend class="sr-only">Newsletter Subscription</legend>
+                            <label for="store-footer-email" class="sr-only">Email address</label>
+                            <input id="store-footer-email" type="email" placeholder="Email address" required
+                                class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 mb-2">
+                            <button type="submit"
+                                class="w-full py-2.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 text-xs font-bold tracking-widest uppercase border border-cyan-200 transition-colors">
+                                Subscribe
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Back to Top -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <small>&copy; 2026 One 'o ones Official Store. All rights reserved.</small>
+                <a href="index.html"
+                    class="hover:text-cyan-400 transition-colors flex items-center gap-1 font-semibold">
+                    <span>Return to Home &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

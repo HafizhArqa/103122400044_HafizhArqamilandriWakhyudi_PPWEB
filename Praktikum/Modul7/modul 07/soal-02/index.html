@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Soal 02 - Registrasi Peserta React | Praktikum AJAX</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#utama">Lewati navigasi</a>
+
+  <aside class="sidebar">
+    <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">{ }</span> Praktikum AJAX</a>
+    <div class="scope">Modul 07 / Pemrograman Web</div>
+    <nav aria-label="Daftar materi">
+      <a href="../../index.html">Peta materi</a>
+      <a href="../../01-apa-itu-ajax/index.html">01 Apa itu AJAX?</a>
+      <a href="../../02-cara-kerja-ajax/index.html">02 Cara kerja AJAX</a>
+      <a href="../../03-event-xhr/index.html">03 Event dan XMLHttpRequest</a>
+      <a href="../../04-fetch-get/index.html">04 GET dengan Fetch</a>
+      <a href="../../05-axios-get/index.html">05 GET dengan Axios</a>
+      <a href="../../06-axios-post/index.html">06 POST dengan Axios</a>
+      <a href="../../07-loading-error/index.html">07 Loading dan error handling</a>
+      <a href="../../08-react-state/index.html">08 Loading dan error di React</a>
+      <a href="../../09-api-eksternal/index.html">09 API lokal dan API eksternal</a>
+      <a href="../soal-01/index.html">Soal 01 - Portal Praktikum</a>
+      <a href="index.html" aria-current="page">Soal 02 - Registrasi React</a>
+    </nav>
+    <p class="sidebar-footer">Belajar dari request pertama sampai state di React.<br>Data latihan: pengguna fiktif.</p>
+  </aside>
+
+  <header class="topbar">
+    <span>Modul 07 <span class="context">/ Soal 02: Registrasi Peserta React</span></span>
+    <a href="../../Modul_07_AJAX_Sederhana.pdf">Baca modul PDF</a>
+  </header>
+
+  <div class="mobile-nav">
+    <label class="skip" for="pindah-materi">Pilih materi</label>
+    <select id="pindah-materi" aria-label="Pindah materi">
+      <option value="../../index.html">Peta materi</option>
+      <option value="../../01-apa-itu-ajax/index.html">01 Apa itu AJAX?</option>
+      <option value="../../02-cara-kerja-ajax/index.html">02 Cara kerja AJAX</option>
+      <option value="../../03-event-xhr/index.html">03 Event dan XMLHttpRequest</option>
+      <option value="../../04-fetch-get/index.html">04 GET dengan Fetch</option>
+      <option value="../../05-axios-get/index.html">05 GET dengan Axios</option>
+      <option value="../../06-axios-post/index.html">06 POST dengan Axios</option>
+      <option value="../../07-loading-error/index.html">07 Loading dan error handling</option>
+      <option value="../../08-react-state/index.html">08 Loading dan error di React</option>
+      <option value="../../09-api-eksternal/index.html">09 API lokal dan API eksternal</option>
+      <option value="../soal-01/index.html">Soal 01 - Portal Praktikum</option>
+      <option value="index.html" selected>Soal 02 - Registrasi React</option>
+    </select>
+  </div>
+
+  <main id="utama" class="sheet">
+    <div class="file-warning" data-file-warning hidden>
+      <strong>Jalankan server terlebih dahulu.</strong><br>
+      Ekstrak seluruh ZIP, lalu klik dua kali <code>JALANKAN.bat</code>. Buka <a href="http://127.0.0.1:3007">http://127.0.0.1:3007</a>.
+      Contoh AJAX perlu alamat HTTP, bukan file://. Node.js 18+ diperlukan; Node.js LTS disarankan.
+    </div>
+
+    <div class="page-meta">Tugas Praktikum Modul 07 / Soal 02 (50 Poin)</div>
+    <h1>Aplikasi Registrasi Peserta React</h1>
+    <p class="intro">Menggunakan Axios (GET &amp; POST), useState, useEffect, pengelolaan kondisi loading/error/timeout, pembersihan effect (cleanup AbortController), serta validasi formulir di React.</p>
+
+    <div class="workspace">
+      <div id="root" style="min-width:0;"></div>
+
+      <section class="explanation">
+        <h2>Inti Materi dan Petunjuk Pengujian</h2>
+        <p>Aplikasi React ini menggabungkan manajemen state terpusat dengan konsumsi API melalui library Axios:</p>
+        <ol>
+          <li><strong>useEffect &amp; AbortController:</strong> GET daftar peserta dipicu otomatis saat mount dan saat pilihan skenario berubah. Cleanup effect membatalkan request yang sedang berjalan dan mencegah response kadaluwarsa menimpa state terbaru.</li>
+          <li><strong>Axios GET &amp; 4 Skenario:</strong>
+            <ul>
+              <li><em>Berhasil:</em> delay 1000 ms, timeout 5000 ms.</li>
+              <li><em>Data kosong:</em> mode=empty, delay 1000 ms, timeout 5000 ms.</li>
+              <li><em>Error HTTP:</em> mode=error (HTTP 503), delay 1000 ms, timeout 5000 ms.</li>
+              <li><em>Timeout:</em> delay 2500 ms dengan timeout Axios 700 ms, memicu ECONNABORTED sebelum server selesai merespons.</li>
+            </ul>
+          </li>
+          <li><strong>Axios POST &amp; Validasi:</strong> Formulir pendaftaran memvalidasi input nama (tidak boleh kosong/spasi) dan format email dengan regex sebelum mengirim JSON. Respons 201 dengan atribut <code>simulated: true</code> ditampilkan terpisah tanpa mengubah daftar GET.</li>
+        </ol>
+
+        <h3>Skenario Pengujian Soal 2</h3>
+        <ul>
+          <li><strong>Uji Muat Ulang:</strong> Buka halaman, lalu klik tombol <em>Muat ulang</em>. Request baru dipicu tanpa reload halaman.</li>
+          <li><strong>Uji Data Kosong &amp; Error HTTP:</strong> Ganti skenario ke <em>Data kosong</em> lalu <em>Error HTTP</em>. Daftar lama segera dibersihkan dan status menampilkan pesan sesuai respons.</li>
+          <li><strong>Uji Timeout:</strong> Pilih skenario <em>Timeout</em>. Request dibatalkan setelah 700 ms (sebelum jeda 2500 ms). Setelah itu, pilih kembali <em>Berhasil</em> untuk memastikan aplikasi pulih.</li>
+          <li><strong>Uji Pergantian Cepat:</strong> Ganti pilihan secara cepat saat status masih loading; request sebelumnya dibatalkan oleh cleanup effect dan hanya response terbaru yang ditampilkan.</li>
+          <li><strong>Uji Kirim Valid:</strong> Masukkan nama <code>Rina Praktikan</code> dan email <code>rina@example.com</code> lalu kirim. Status HTTP 201, ID 101, data sesuai input, dan <code>simulated: true</code> muncul, sementara daftar GET tetap utuh.</li>
+          <li><strong>Uji Validasi:</strong> Coba kirim nama yang hanya berisi spasi atau email tanpa format valid; formulir menolak pengiriman dan menampilkan petunjuk perbaikan.</li>
+        </ul>
+      </section>
+    </div>
+
+    <details class="source" data-source="app.jsx">
+      <summary>Lihat kode React JSX: app.jsx</summary>
+      <p class="meta">File: latihan-praktikan/soal-02/app.jsx. Komponen React dengan Axios GET/POST, state, dan effect.</p>
+      <pre class="source-code"><code>Memuat kode...</code></pre>
+    </details>
+
+    <details class="source" data-source="index.html">
+      <summary>Lihat kode HTML: index.html</summary>
+      <pre class="source-code"><code>Memuat kode...</code></pre>
+    </details>
+
+    <div class="pager">
+      <a href="../soal-01/">&larr; Kembali ke Soal 01</a>
+      <a href="../../index.html">Kembali ke Peta Materi &rarr;</a>
+    </div>
+  </main>
+
+  <script src="../../assets/ui.js"></script>
+  <script src="../../vendor/axios.min.js"></script>
+  <script src="../../vendor/react.development.js"></script>
+  <script src="../../vendor/react-dom.development.js"></script>
+  <script src="../../vendor/babel.min.js"></script>
+  <script type="text/babel" data-presets="react" src="app.jsx"></script>
+</body>
+</html>
+

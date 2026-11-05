@@ -1,0 +1,576 @@
+/* ==========================================================================
+   STYLE.CSS - Artist Music Showcase (Owl City Inspired Store & Discography)
+   Rules: Pure CSS, HTML, and Tailwind only (No sliders, no external JS)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Outfit:wght@300;400;600;700&display=swap');
+
+/* --- Root Color Variables --- */
+:root {
+    --sec1-bg: #0b1120;
+    --sec2-bg: #1e1b4b;
+    --sec3-bg: #042f2e;
+    --footer-bg: #050811;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--sec1-bg);
+    color: #f8fafc;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==========================================================================
+   NAVBAR (Owl City Store Inspired)
+   ========================================================================== */
+.artist-navbar {
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    position: relative;
+    color: #cbd5e1;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #67e8f9;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   SECTION FADE TRANSITIONS
+   ========================================================================== */
+.section-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Gradient Fade Blends between sections */
+.fade-overlay-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background: linear-gradient(to bottom, rgba(11, 17, 32, 0.95) 0%, transparent 100%);
+    z-index: 15;
+    pointer-events: none;
+}
+
+.fade-overlay-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background: linear-gradient(to top, rgba(11, 17, 32, 0.95) 0%, transparent 100%);
+    z-index: 15;
+    pointer-events: none;
+}
+
+/* Transition blending zones between specific section colors */
+.fade-bridge-1-to-2 {
+    position: relative;
+    height: 180px;
+    background: linear-gradient(180deg, #0b1120 0%, #0d1222 50%, #070a13 100%);
+    z-index: 12;
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
+
+.fade-bridge-2-to-3 {
+    position: relative;
+    height: 180px;
+    background: linear-gradient(180deg, #070a13 0%, #051a24 50%, #042f2e 100%);
+    z-index: 12;
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
+
+.fade-bridge-3-to-footer {
+    position: relative;
+    height: 160px;
+    background: linear-gradient(180deg, #042f2e 0%, #061722 50%, #050811 100%);
+    z-index: 12;
+}
+
+/* ==========================================================================
+   PRODUCT / MERCH CARDS (Owl City Store Grid Inspired)
+   ========================================================================== */
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quick-view-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%) translateY(30px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .quick-view-badge {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   SECTION 1: 8-BIT ODYSSEY (Retro Pixel)
+   ========================================================================== 
+*/
+.sec-8bit {
+    background-color: var(--sec1-bg);
+}
+
+.font-pixel {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.code-grid-bg {
+    position: absolute;
+    inset: -50px;
+    background-image:
+        linear-gradient(#c084fc 1px, transparent 1px),
+        linear-gradient(90deg, #c084fc 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.12;
+    animation: gridMove 20s linear infinite;
+    z-index: 1;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.floating-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    font-size: 1.5rem;
+    color: #67e8f9;
+    opacity: 0;
+    animation: float infinite ease-in-out;
+    text-shadow: 0 0 10px #67e8f9;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translateY(40vh) rotate(180deg);
+        opacity: 0.8;
+    }
+
+    85% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.pixel-btn {
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+    transition: all 0.1s ease;
+}
+
+.pixel-btn:hover {
+    filter: brightness(1.15);
+}
+
+.pixel-btn:active {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.8);
+    transform: translate(4px, 4px);
+}
+
+/* ==========================================================================
+   SECTION 2: ASTRAL HORIZON (Bold Minimalist & Ambient Astral-Astral / Fireflies)
+   ========================================================================== */
+.sec-astral,
+.sec-nocturne {
+    background-color: #070a13;
+    font-family: 'Outfit', sans-serif;
+}
+
+.astral-bg,
+.nocturne-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 35%, #181d36 0%, #0c1122 45%, #050811 85%);
+    z-index: 1;
+}
+
+.astral-overlay,
+.nocturne-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 10, 19, 0.45) 0%, rgba(7, 10, 19, 0.85) 100%);
+    z-index: 2;
+}
+
+.ambient-fireflies {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.firefly {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fef08a;
+    border-radius: 50%;
+    box-shadow: 0 0 14px 4px rgba(253, 224, 71, 0.9), 0 0 28px 8px rgba(245, 158, 11, 0.5);
+    animation: driftFirefly var(--duration, 8s) infinite alternate ease-in-out,
+        glowFirefly var(--flash, 3s) infinite alternate ease-in-out;
+}
+
+.firefly-sm {
+    width: 3px;
+    height: 3px;
+    box-shadow: 0 0 8px 2px rgba(253, 224, 71, 0.8);
+}
+
+.firefly-lg {
+    width: 6px;
+    height: 6px;
+    box-shadow: 0 0 18px 6px rgba(253, 224, 71, 0.95), 0 0 35px 12px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes driftFirefly {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(calc(var(--move-x) * 0.5), calc(var(--move-y) * -0.3));
+    }
+
+    100% {
+        transform: translate(var(--move-x), var(--move-y));
+    }
+}
+
+@keyframes glowFirefly {
+    0% {
+        opacity: 0.1;
+        transform: scale(0.7);
+        filter: blur(1px);
+    }
+
+    45% {
+        opacity: 0.95;
+        transform: scale(1.4);
+        filter: blur(0px);
+    }
+
+    75% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.6);
+    }
+}
+
+/* Bold Minimalist Buttons */
+.bold-primary-btn {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bold-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+}
+
+.bold-outline-btn {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bold-outline-btn:hover {
+    transform: translateY(-2px);
+    border-color: #fde047;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   SECTION 3: OCEAN LULLABY (Aquatic)
+   ========================================================================== */
+.sec-ocean {
+    background-color: var(--sec3-bg);
+    font-family: 'Outfit', sans-serif;
+}
+
+.ocean-bg {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(180deg, rgba(4, 30, 50, 0.82) 0%, rgba(6, 55, 80, 0.75) 45%, rgba(3, 18, 35, 0.92) 100%),
+        url('https://tse4.mm.bing.net/th/id/OIP.AUe3uE-sayQTmadZtn3ViwHaFX?r=0&w=1280&h=927&rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0.95;
+}
+
+.sun-rays {
+    position: absolute;
+    inset: -20%;
+    background:
+        linear-gradient(75deg, transparent 20%, rgba(255, 255, 255, 0.07) 30%, transparent 40%),
+        linear-gradient(90deg, transparent 45%, rgba(255, 255, 255, 0.09) 55%, transparent 65%),
+        linear-gradient(105deg, transparent 60%, rgba(255, 255, 255, 0.06) 75%, transparent 90%);
+    mask-image: linear-gradient(to bottom, black 0%, transparent 75%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 75%);
+    filter: blur(16px);
+    animation: shimmerRays 12s infinite alternate ease-in-out;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes shimmerRays {
+    0% {
+        transform: scale(1.1) translateX(-3%);
+    }
+
+    100% {
+        transform: scale(1.1) translateX(3%);
+    }
+}
+
+.bubble-container {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.1);
+    animation: rise var(--duration) infinite ease-in,
+        sway var(--sway-duration) infinite alternate ease-in-out;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -50px;
+        transform: scale(var(--scale));
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 110vh;
+        transform: scale(var(--scale));
+        opacity: 0;
+    }
+}
+
+@keyframes sway {
+    0% {
+        margin-left: var(--sway-distance);
+    }
+
+    100% {
+        margin-left: calc(var(--sway-distance) * -1);
+    }
+}
+
+.ripple-effect {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(103, 232, 249, 0.6);
+    animation: ripple 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ripple-effect:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.ripple-effect:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        border-width: 4px;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+
+.ocean-btn {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.ocean-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 40%;
+    z-index: -1;
+    transition: all 0.6s ease;
+    transform: translateY(100%) rotate(0deg);
+}
+
+.ocean-btn:hover::after {
+    transform: translateY(-20%) rotate(180deg);
+}
+
+/* ==========================================================================
+   PURE CSS MODAL & INTERACTION UTILITIES
+   ========================================================================== */
+.login-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 7, 18, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#modal-login:target,
+#modal-cart:target,
+#modal-tickets:target {
+    display: flex;
+}
+
+.login-modal-box {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Glassmorphism Panel Utility */
+.glass-panel {
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-panel-glow {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.3);
+}

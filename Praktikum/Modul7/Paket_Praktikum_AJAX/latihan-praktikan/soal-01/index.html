@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Soal 01 - Portal Informasi Praktikum | Praktikum AJAX</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#utama">Lewati navigasi</a>
+
+  <aside class="sidebar">
+    <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">{ }</span> Praktikum AJAX</a>
+    <div class="scope">Modul 07 / Pemrograman Web</div>
+    <nav aria-label="Daftar materi">
+      <a href="../../index.html">Peta materi</a>
+      <a href="../../01-apa-itu-ajax/index.html">01 Apa itu AJAX?</a>
+      <a href="../../02-cara-kerja-ajax/index.html">02 Cara kerja AJAX</a>
+      <a href="../../03-event-xhr/index.html">03 Event dan XMLHttpRequest</a>
+      <a href="../../04-fetch-get/index.html">04 GET dengan Fetch</a>
+      <a href="../../05-axios-get/index.html">05 GET dengan Axios</a>
+      <a href="../../06-axios-post/index.html">06 POST dengan Axios</a>
+      <a href="../../07-loading-error/index.html">07 Loading dan error handling</a>
+      <a href="../../08-react-state/index.html">08 Loading dan error di React</a>
+      <a href="../../09-api-eksternal/index.html">09 API lokal dan API eksternal</a>
+      <a href="index.html" aria-current="page">Soal 01 - Portal Praktikum</a>
+      <a href="../soal-02/index.html">Soal 02 - Registrasi React</a>
+    </nav>
+    <p class="sidebar-footer">Belajar dari request pertama sampai state di React.<br>Data latihan: pengguna fiktif.</p>
+  </aside>
+
+  <header class="topbar">
+    <span>Modul 07 <span class="context">/ Soal 01: Portal Informasi Praktikum</span></span>
+    <a href="../../Modul_07_AJAX_Sederhana.pdf">Baca modul PDF</a>
+  </header>
+
+  <div class="mobile-nav">
+    <label class="skip" for="pindah-materi">Pilih materi</label>
+    <select id="pindah-materi" aria-label="Pindah materi">
+      <option value="../../index.html">Peta materi</option>
+      <option value="../../01-apa-itu-ajax/index.html">01 Apa itu AJAX?</option>
+      <option value="../../02-cara-kerja-ajax/index.html">02 Cara kerja AJAX</option>
+      <option value="../../03-event-xhr/index.html">03 Event dan XMLHttpRequest</option>
+      <option value="../../04-fetch-get/index.html">04 GET dengan Fetch</option>
+      <option value="../../05-axios-get/index.html">05 GET dengan Axios</option>
+      <option value="../../06-axios-post/index.html">06 POST dengan Axios</option>
+      <option value="../../07-loading-error/index.html">07 Loading dan error handling</option>
+      <option value="../../08-react-state/index.html">08 Loading dan error di React</option>
+      <option value="../../09-api-eksternal/index.html">09 API lokal dan API eksternal</option>
+      <option value="index.html" selected>Soal 01 - Portal Praktikum</option>
+      <option value="../soal-02/index.html">Soal 02 - Registrasi React</option>
+    </select>
+  </div>
+
+  <main id="utama" class="sheet">
+    <div class="file-warning" data-file-warning hidden>
+      <strong>Jalankan server terlebih dahulu.</strong><br>
+      Ekstrak seluruh ZIP, lalu klik dua kali <code>JALANKAN.bat</code>. Buka <a href="http://127.0.0.1:3007">http://127.0.0.1:3007</a>.
+      Contoh AJAX perlu alamat HTTP, bukan file://. Node.js 18+ diperlukan; Node.js LTS disarankan.
+    </div>
+
+    <div class="page-meta">Tugas Praktikum Modul 07 / Soal 01 (50 Poin)</div>
+    <h1>Portal Informasi Praktikum</h1>
+    <p class="intro">Membaca pengumuman via XMLHttpRequest dan direktori peserta via Fetch API tanpa memuat ulang halaman. Interaksi catatan dan hitungan tetap berjalan saat request asynchronous berlangsung.</p>
+
+    <div class="workspace">
+      <section class="practice" aria-label="Program portal praktikum">
+        <h2>Panel Interaksi dan Pengujian Non-Reload</h2>
+        <p class="meta">Waktu halaman pertama dibuka: <strong id="waktu-buka">-</strong></p>
+
+        <label for="catatan">Catatan praktikan</label>
+        <input type="text" id="catatan" placeholder="Ketik catatan di sini untuk membuktikan halaman tidak reload...">
+
+        <div class="actions">
+          <button type="button" class="secondary" id="tombol-hitung">
+            Tambah hitungan: <span id="angka-hitungan">0</span>
+          </button>
+        </div>
+
+        <hr style="border:0;border-top:1px solid var(--border);margin:24px 0;">
+
+        <h2>1. Bagian Pengumuman (XMLHttpRequest)</h2>
+        <p class="meta">Meminta berkas teks <code>pengumuman.txt</code> secara asynchronous via XHR.</p>
+        <button type="button" id="muat-pengumuman">Muat pengumuman</button>
+        <p id="status-pengumuman" class="result" role="status">Pengumuman belum dimuat.</p>
+        <pre id="isi-pengumuman" class="result" style="margin-top:10px;">Belum ada pengumuman.</pre>
+
+        <hr style="border:0;border-top:1px solid var(--border);margin:24px 0;">
+
+        <h2>2. Bagian Direktori Peserta (Fetch API)</h2>
+        <label for="pilihan-sumber">Pilihan sumber direktori</label>
+        <select id="pilihan-sumber">
+          <option value="lokal">Mock lokal (/api/users?delay=1500)</option>
+          <option value="eksternal">JSONPlaceholder (https://jsonplaceholder.typicode.com/users)</option>
+        </select>
+
+        <button type="button" id="ambil-peserta">Ambil peserta</button>
+        <p id="status-peserta" class="result" role="status">Daftar peserta belum diminta.</p>
+        <ul id="daftar-peserta" class="users"></ul>
+      </section>
+
+      <section class="explanation">
+        <h2>Inti Materi dan Petunjuk Pengujian</h2>
+        <p>Halaman ini menerapkan dua teknik AJAX sekaligus untuk membuktikan sifat asynchronous dalam aplikasi web:</p>
+        <ol>
+          <li><strong>XMLHttpRequest (XHR):</strong> Mengambil berkas statis <code>pengumuman.txt</code> secara asinkron dengan memeriksa <code>readyState === 4</code> dan status HTTP 200–299.</li>
+          <li><strong>Fetch API:</strong> Mengambil data JSON pengguna dengan memeriksa <code>response.ok</code>, memotong maksimal 3 pengguna pertama, dan menampilkan nama sumber beserta jumlah data.</li>
+          <li><strong>Non-blocking UI:</strong> Saat request pengumuman atau peserta sedang berjalan (status loading), praktikan dapat terus mengetik catatan atau mengklik tombol <em>Tambah hitungan</em>. Nilai catatan, angka hitungan, dan waktu awal tidak pernah hilang karena seluruh proses berjalan tanpa memuat ulang (reload) halaman.</li>
+        </ol>
+
+        <h3>Skenario Pengujian Soal 1</h3>
+        <ul>
+          <li><strong>Uji Pengumuman:</strong> Klik tombol <em>Muat pengumuman</em>. Ubah isi <code>pengumuman.txt</code> lalu klik lagi; isi baru langsung tampil.</li>
+          <li><strong>Uji Error 404:</strong> Ubah sementara target request di <code>app.js</code> menjadi <code>hilang.txt</code>; status HTTP 404 akan ditampilkan secara informatif.</li>
+          <li><strong>Uji Asynchronous:</strong> Klik <em>Ambil peserta</em> (Mock lokal dijeda 1,5 detik). Selama loading, ketik di kolom catatan dan klik <em>Tambah hitungan</em> 3 kali. Catatan, angka 3, dan waktu awal tetap utuh saat 3 pengguna muncul.</li>
+          <li><strong>Uji API Eksternal:</strong> Pilih <em>JSONPlaceholder</em> lalu klik <em>Ambil peserta</em>. Maksimal 3 pengguna eksternal akan tampil atau muncul panduan jika jaringan terputus. Pilihan sumber tidak berganti otomatis.</li>
+        </ul>
+      </section>
+    </div>
+
+    <details class="source" data-source="app.js">
+      <summary>Lihat kode JavaScript: app.js</summary>
+      <p class="meta">File: latihan-praktikan/soal-01/app.js. Menangani XHR, Fetch, dan event handling.</p>
+      <pre class="source-code"><code>Memuat kode...</code></pre>
+    </details>
+
+    <details class="source" data-source="index.html">
+      <summary>Lihat kode HTML: index.html</summary>
+      <pre class="source-code"><code>Memuat kode...</code></pre>
+    </details>
+
+    <details class="source" data-source="pengumuman.txt">
+      <summary>Lihat isi berkas: pengumuman.txt</summary>
+      <pre class="source-code"><code>Memuat kode...</code></pre>
+    </details>
+
+    <div class="pager">
+      <a href="../../09-api-eksternal/">&larr; Kembali ke Materi 09</a>
+      <a href="../soal-02/">Lanjut ke Soal 02 &rarr;</a>
+    </div>
+  </main>
+
+  <script src="../../assets/ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

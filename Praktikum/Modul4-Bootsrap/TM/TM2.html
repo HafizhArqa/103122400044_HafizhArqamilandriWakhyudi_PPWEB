@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Toko Kampus Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <header id="beranda" class="bg-white shadow px-4 py-8 mb-8 text-center">
+        <h1 class="text-3xl font-bold">Toko Kampus</h1>
+        <p class="text-gray-600 mt-2 mb-6">Perlengkapan kuliah untuk kebutuhan sehari-hari</p>
+
+        <nav class="flex justify-center gap-6">
+            <a href="#beranda" class="text-blue-600 hover:text-blue-800 hover:underline">Beranda</a>
+            <a href="#produk" class="text-blue-600 hover:text-blue-800 hover:underline">Produk</a>
+            <a href="#kontak" class="text-blue-600 hover:text-blue-800 hover:underline">Kontak</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4">
+        
+        <section id="produk" class="mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="https://th.bing.com/th/id/OIP.jiYLonalLqUtA3t00mVmSAHaHa?w=183&h=183&c=7&r=0&o=7&pid=1.7&rm=3" alt="Buku Catatan" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-lg">Buku Catatan</h3>
+                    <p class="text-blue-600 font-semibold mb-2">Rp15.000</p>
+                    <p class="text-gray-500 mb-4">Buku untuk mencatat materi kuliah.</p>
+                    <a href="#detail-buku" class="inline-block bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded">Lihat Detail</a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="data:image/webp;base64,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" alt="Pulpen" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-lg">Pulpen</h3>
+                    <p class="text-blue-600 font-semibold mb-2">Rp5.000</p>
+                    <p class="text-gray-500 mb-4">Pulpen untuk menulis tugas dan catatan.</p>
+                    <a href="#detail-pulpen" class="inline-block bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded">Lihat Detail</a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="https://m.media-amazon.com/images/I/61P5FSGnrKL.jpg" alt="Tumbler" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-lg">Tumbler</h3>
+                    <p class="text-blue-600 font-semibold mb-2">Rp35.000</p>
+                    <p class="text-gray-500 mb-4">Botol minum untuk dibawa ke kampus.</p>
+                    <a href="#detail-tumbler" class="inline-block bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded">Lihat Detail</a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <img src="https://th.bing.com/th/id/OIP.53J0r3JJTD_vKX6K-Eo7EQHaHw?w=176&h=184&c=7&r=0&o=7&pid=1.7&rm=3" alt="Tas Kuliah" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-lg">Tas Kuliah</h3>
+                    <p class="text-blue-600 font-semibold mb-2">Rp120.000</p>
+                    <p class="text-gray-500 mb-4">Tas untuk menyimpan buku dan alat tulis.</p>
+                    <a href="#detail-tas" class="inline-block bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded">Lihat Detail</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 space-y-6">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Detail Perlengkapan</h2>
+            
+            <div id="detail-buku" class="bg-white p-6 rounded shadow">
+                <h3 class="font-bold text-xl mb-2">Detail: Buku Catatan</h3>
+                <p class="text-gray-600">Bahan: Kertas HVS 80gsm. Ukuran: A5. Isi 100 lembar bergaris, dilengkapi dengan sampul spiral plastik transparan anti air.</p>
+            </div>
+            
+            <div id="detail-pulpen" class="bg-white p-6 rounded shadow">
+                <h3 class="font-bold text-xl mb-2">Detail: Pulpen</h3>
+                <p class="text-gray-600">Jenis Tinta: Gel Ink warna hitam. Ukuran Tip: 0.5mm. Desain ergonomis dengan pegangan karet yang nyaman untuk menulis dalam waktu lama.</p>
+            </div>
+
+            <div id="detail-tumbler" class="bg-white p-6 rounded shadow">
+                <h3 class="font-bold text-xl mb-2">Detail: Tumbler</h3>
+                <p class="text-gray-600">Bahan: Stainless Steel 304 tahan karat (BPA-Free). Kapasitas: 500ml. Mampu menahan suhu minuman panas atau dingin hingga 8 jam.</p>
+            </div>
+
+            <div id="detail-tas" class="bg-white p-6 rounded shadow">
+                <h3 class="font-bold text-xl mb-2">Detail: Tas Kuliah</h3>
+                <p class="text-gray-600">Bahan: Kanvas tebal water-repellent. Ukuran: 30x42x15 cm. Memiliki kompartemen khusus laptop ukuran 15 inci dan saku botol minum di sisi luar.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="kontak" class="bg-gray-800 text-white py-8 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-2">Kontak</h2>
+            <p class="text-lg font-semibold">Toko Kampus</p>
+            <p class="mt-2 text-gray-300">Hubungi kami melalui email: 
+                <a href="mailto:toko@example.com" class="text-blue-400 hover:text-blue-300 underline">toko@example.com</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
