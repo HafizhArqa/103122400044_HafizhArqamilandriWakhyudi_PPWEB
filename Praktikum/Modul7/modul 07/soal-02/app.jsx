@@ -27,14 +27,12 @@ const SKENARIO = {
 };
 
 function AplikasiRegistrasi() {
-  // State untuk GET dan skenario
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [scenario, setScenario] = useState("berhasil");
   const [percobaan, setPercobaan] = useState(0);
 
-  // State untuk formulir POST
   const [nama, setNama] = useState("");
   const [email, setEmail] = useState("");
   const [formError, setFormError] = useState("");
@@ -42,9 +40,7 @@ function AplikasiRegistrasi() {
   const [postResult, setPostResult] = useState(null);
   const [postError, setPostError] = useState("");
 
-  // ==========================================
-  // 1. GET Peserta dengan useEffect & Axios
-  // ==========================================
+
   useEffect(() => {
     const controller = new AbortController();
     let aktif = true;
@@ -62,19 +58,16 @@ function AplikasiRegistrasi() {
           signal: controller.signal
         });
 
-        // Pastikan hanya request aktif yang memperbarui state
         if (aktif) {
           setUsers(response.data);
         }
       } catch (err) {
         if (!aktif) return;
 
-        // Abaikan jika request dibatalkan oleh pengguna/cleanup
         if (axios.isCancel(err) || err.name === "CanceledError") {
           return;
         }
 
-        // Tangani kegagalan sesuai jenis error
         if (err.code === "ECONNABORTED" || (err.message && err.message.toLowerCase().includes("timeout"))) {
           setError(`Timeout: Batas waktu tunggu (${config.timeout} ms) terlampaui sebelum server merespons.`);
         } else if (err.response) {
@@ -91,18 +84,14 @@ function AplikasiRegistrasi() {
 
     ambilData();
 
-    // Cleanup: batalkan request jika skenario berubah sebelum response tiba
     return () => {
       aktif = false;
       controller.abort();
     };
   }, [scenario, percobaan]);
 
-  // ==========================================
-  // 2. Handler Pengiriman Formulir (POST)
-  // ==========================================
   async function handleKirimPendaftaran(event) {
-    event.preventDefault(); // Cegah reload halaman
+    event.preventDefault(); 
 
     setFormError("");
     setPostError("");
@@ -111,13 +100,11 @@ function AplikasiRegistrasi() {
     const namaBersih = nama.trim();
     const emailBersih = email.trim();
 
-    // Validasi 1: Tolak nama kosong atau hanya spasi
     if (!namaBersih) {
       setFormError("Nama peserta wajib diisi dan tidak boleh hanya berupa spasi.");
       return;
     }
 
-    // Validasi 2: Format email valid
     const polaEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!polaEmail.test(emailBersih)) {
       setFormError("Format email tidak valid. Masukkan format yang benar, contoh: rina@example.com");
@@ -135,7 +122,6 @@ function AplikasiRegistrasi() {
         headers: { "Content-Type": "application/json" }
       });
 
-      // Tampilkan status HTTP, id, nama, email, simulated, dan pesan konfirmasi
       setPostResult({
         status: response.status,
         id: response.data.id,
@@ -151,7 +137,6 @@ function AplikasiRegistrasi() {
         setPostError(`Gagal mengirim: ${err.message}`);
       }
     } finally {
-      // Pulihkan status kontrol setelah proses pengiriman selesai
       setSubmitting(false);
     }
   }
