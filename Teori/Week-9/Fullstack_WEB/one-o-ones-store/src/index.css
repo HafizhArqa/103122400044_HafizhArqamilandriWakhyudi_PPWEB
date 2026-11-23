@@ -1,0 +1,62 @@
+/* Base Reset & Global Variables */
+:root {
+  --bg-primary: #020617;
+  --bg-secondary: #0b1120;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --bg-card-hover: rgba(30, 41, 59, 0.85);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: #22d3ee;
+  
+  --cyan-primary: #22d3ee;
+  --cyan-glow: rgba(34, 211, 238, 0.35);
+  --amber-primary: #fbbf24;
+  --amber-glow: rgba(251, 191, 36, 0.35);
+  --teal-primary: #2dd4bf;
+  --teal-glow: rgba(45, 212, 191, 0.35);
+  --purple-primary: #c084fc;
+  --purple-glow: rgba(192, 132, 252, 0.35);
+  --pink-primary: #f472b6;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dark: #0f172a;
+
+  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', ui-monospace, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(34, 211, 238, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 10%, rgba(251, 191, 36, 0.08) 0px, transparent 40%),
+    radial-gradient(at 50% 100%, rgba(192, 132, 252, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan-primary);
+}

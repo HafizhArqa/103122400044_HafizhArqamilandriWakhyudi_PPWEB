@@ -1,0 +1,75 @@
+### ONE 'O ONES Official Store - NestJS REST API Test Collection
+### Gunakan ekstensi "REST Client" di VS Code (klik "Send Request" di atas setiap blok)
+@baseUrl = http://localhost:3000
+
+### 0. Health / Root Info
+GET {{baseUrl}}/
+
+### 1. GET - Ambil semua produk merchandise (200 OK)
+GET {{baseUrl}}/products
+
+### 2. GET - Ambil detail satu produk berdasarkan ID (200 OK)
+GET {{baseUrl}}/products/1
+
+### 3. POST - Tambah produk merchandise baru (201 Created)
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "sku": "101-VNL-008",
+  "name": "Ocean Echoes Acoustic Sessions EP Vinyl",
+  "category": "Vinyl",
+  "price": 42.5,
+  "stock": 15,
+  "editionBadge": "Signed Pressing",
+  "description": "Piringan hitam 180g sesi akustik live dengan sleeve hologram dan lyric sheet eksklusif.",
+  "icon": "sparkles",
+  "themeColor": "cyan",
+  "releaseDate": "2026-11-23",
+  "isLimitedEdition": true
+}
+
+### 4. PATCH - Ubah sebagian data produk ID #8 (200 OK)
+PATCH {{baseUrl}}/products/8
+Content-Type: application/json
+
+{
+  "price": 45,
+  "stock": 10,
+  "editionBadge": "Tour Exclusive"
+}
+
+### 5. DELETE - Hapus produk ID #8 (200 OK)
+DELETE {{baseUrl}}/products/8
+
+### 6. ERROR 1 - NotFoundException (404 Not Found): ID tidak ditemukan
+GET {{baseUrl}}/products/999
+
+### 7. ERROR 2 - ConflictException (409 Conflict): SKU duplikat sudah terdaftar
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "sku": "101-VNL-001",
+  "name": "Astral Horizon Duplicate Test Vinyl",
+  "category": "Vinyl",
+  "price": 39,
+  "stock": 10,
+  "description": "Pengujian skenario ConflictException untuk SKU yang sudah digunakan.",
+  "releaseDate": "2026-11-23"
+}
+
+### 8. ERROR 3 - BadRequestException (400 Bad Request): Validasi DTO gagal (ValidationPipe)
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "sku": "INVALID-SKU",
+  "name": "AB",
+  "category": "Elektronik",
+  "price": -10,
+  "stock": -5,
+  "description": "Pendek",
+  "releaseDate": "bukan-tanggal"
+}
+
